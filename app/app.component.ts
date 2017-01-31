@@ -25,7 +25,8 @@ const HEROES: Hero[] = [
     <h2>My Heroes</h2>
     <ul class='heroes'>
       <li *ngFor="let hero of heroes"
-        (click)="onSelectedHero(hero)">
+        (click)="onSelectedHero(hero)"
+        [class.selected]="hero == selectedHero">
         <span class='badge'>{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
@@ -60,6 +61,10 @@ const HEROES: Hero[] = [
     background-color: #DDD;
     left: .1em;
   }
+  .heroes li.selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+  }
   .heroes .text {
     position: relative;
     top: -3px;
@@ -77,6 +82,10 @@ const HEROES: Hero[] = [
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+  }
+  .selected {
+    background-color: #CFD8DC !important;
+    color: white;
   }
 `]
 })
