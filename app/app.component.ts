@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroesWithLatency().then(heroes => this.heroes = heroes);
   }
 
   onSelectedHero(hero: Hero): void {
