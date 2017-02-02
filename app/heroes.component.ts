@@ -16,7 +16,6 @@ import { HeroService } from './hero.service';
     </ul>
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>
     `,
-  providers: [HeroService],
   styles: [`
   .heroes {
     margin: 0 0 2em 0;
