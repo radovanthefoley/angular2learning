@@ -13,6 +13,11 @@ import { HeroService } from './hero.service';
   imports: [BrowserModule, FormsModule,
     RouterModule.forRoot([
       {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
         path: 'heroes',
         component: HeroesComponent
       },
