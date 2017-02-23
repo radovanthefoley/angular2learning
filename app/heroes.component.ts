@@ -23,7 +23,7 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroesWithLatency().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
   onSelectedHero(hero: Hero): void {
