@@ -24,7 +24,26 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroesWithLatency().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  }
+
+  add(heroName: string): void {
+    heroName = heroName.trim();
+    if (!heroName) return;
+    this.heroService.create({ id: null, name: heroName })
+      .then(hero => {
+        this.heroes.push(hero);
+        this.selectedHero = null;
+      });
+  }
+
+  delete(hero: Hero): void {
+    if (!hero) return;
+    this.heroService.delete(hero)
+      .then(() => {
+        this.heroes = this.heroes.filter(h => h !== hero);
+        if (this.selectedHero === hero) this.selectedHero = null;
+      });
   }
 
   onSelectedHero(hero: Hero): void {
