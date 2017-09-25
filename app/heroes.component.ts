@@ -11,12 +11,13 @@ import { HeroService } from './hero.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  constructor(private heroService: HeroService, private router: Router) {
-  }
 
   title = 'Tour of Heroes';
   heroes: Hero[];
   selectedHero: Hero;
+
+  constructor(private heroService: HeroService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.getHeroes();

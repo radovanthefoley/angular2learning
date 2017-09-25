@@ -14,12 +14,13 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
+
+  hero: Hero;
+
   constructor(private heroService: HeroService,
               private route: ActivatedRoute,
               private location: Location) {
   }
-
-  hero: Hero;
 
   ngOnInit(): void {
     this.route.params
